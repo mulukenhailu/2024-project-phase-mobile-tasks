@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Page2 extends StatelessWidget {
   const Page2({super.key});
@@ -22,11 +21,11 @@ class Page2 extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 15),
+                padding: const EdgeInsets.only(left: 15),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
@@ -43,7 +42,7 @@ class Page2 extends StatelessWidget {
                         )
                       ],
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
@@ -74,14 +73,14 @@ class Page2 extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.only(top: 16),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [Text("Size:")],
                       ),
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
@@ -129,12 +128,11 @@ class Page2 extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Card(
+                    const Card(
                       elevation: 0,
                       child: Text(
                           "A derby leather shoe is a classic and versatile footwear option characterized by its open lacing system, where the shoelace eyelets are sewn on top of the vamp (the upper part of the shoe). This design feature provides a more relaxed and casual look compared to the closed lacing system of oxford shoes. Derby shoes are typically made of high-quality leather, known for its durability and elegance, making them suitable for both formal and casual occasions. With their timeless style and comfortable fit, derby leather shoes are a staple in any well-rounded wardrobe."),
                     ),
-                    // two  rectangluar buttons one at the left and one at the right that say delete and update respectively
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

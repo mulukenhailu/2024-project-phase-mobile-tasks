@@ -223,8 +223,6 @@ class Page1 extends StatelessWidget {
                 ),
               ),
             ),
-
-            
             Padding(
               padding: const EdgeInsets.all(8),
               child: Card(
