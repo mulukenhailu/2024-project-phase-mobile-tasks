@@ -6,6 +6,7 @@ class Page3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         leading: const Icon(Icons.arrow_back_ios),
         title: const Text("Add Product"),
@@ -16,8 +17,8 @@ class Page3 extends StatelessWidget {
         children: [
           Center(
             child: Container(
-              height: 140,
-              width: 250,
+              height: 160,
+              width: 300,
               decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 230, 233, 236),
                 borderRadius: BorderRadius.circular(10),
@@ -142,11 +143,11 @@ class Page3 extends StatelessWidget {
                           const BorderSide(color: Colors.white, width: 2.0),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    contentPadding: const EdgeInsets.symmetric(vertical: 10),
+                    contentPadding: const EdgeInsets.symmetric(vertical: 25),
                     hintStyle: const TextStyle(color: Colors.grey),
                   ),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 20),
                 Column(
                   children: [
                     Container(
@@ -163,7 +164,7 @@ class Page3 extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 8),
+                    const SizedBox(height: 16),
                     Container(
                       width: double.infinity,
                       height: 50,
