@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Task-6',
       initialRoute: "/page_2",
       debugShowCheckedModeBanner: false,
-      routes: {"/page_2": (BuildContext context) => const Page4()},
+      routes: {"/page_2": (BuildContext context) => const Page2()},
       theme: ThemeData.light(useMaterial3: true),
     );
   }

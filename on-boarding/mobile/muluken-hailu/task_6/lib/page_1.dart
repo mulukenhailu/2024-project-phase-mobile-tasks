@@ -22,7 +22,7 @@ class Page1 extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    "date",
+                    "august, 10, 2024",
                     style: TextStyle(fontSize: 10),
                   ),
                 ],

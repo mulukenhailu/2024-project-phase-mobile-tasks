@@ -29,8 +29,8 @@ class Page2 extends StatelessWidget {
                         top: 16,
                         left: 16,
                         child: SizedBox(
-                          height: 35,
-                          width: 35,
+                          height: 40,
+                          width: 40,
                           child: Center(
                             child: IconButton(
                               icon:  const Icon(
