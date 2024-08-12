@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
 import 'home_page.dart';
 
-class Page4 extends StatelessWidget {
-  const Page4({super.key});
+class SeachPage extends StatelessWidget {
+  const SeachPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +16,8 @@ class Page4 extends StatelessWidget {
           child: IconButton(
             icon: const Icon(Icons.arrow_back_ios_new_rounded),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: 
-                (context)=>const HomePage())
-              );
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const HomePage()));
             },
           ),
         ),

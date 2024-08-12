@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'add_product_page.dart';
-import 'page_4.dart';
+import 'search.dart';
 import 'Detail_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -82,7 +82,7 @@ class HomePage extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const Page4()));
+                                builder: (context) => const SeachPage()));
                       },
                     ),
                   ],
@@ -96,7 +96,7 @@ class HomePage extends StatelessWidget {
                     MaterialPageRoute(
                         builder: (context) => const DetailPage()));
               },
-              style:ButtonStyle(
+              style: ButtonStyle(
                 backgroundColor: WidgetStateProperty.all(Colors.white),
                 padding: WidgetStateProperty.all(const EdgeInsets.all(0)),
               ),
@@ -126,7 +126,8 @@ class HomePage extends StatelessWidget {
                                   padding: EdgeInsets.fromLTRB(0, 5, 10, 0),
                                   child: Text(
                                     "Derby Leather Shoe",
-                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
                                     textAlign: TextAlign.start,
                                   ),
                                 ),
@@ -192,11 +193,11 @@ class HomePage extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const DetailPage()));
-                        },
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const DetailPage()));
+                      },
                       child: const Padding(
                         padding: EdgeInsets.only(left: 15),
                         child: Column(
@@ -209,7 +210,8 @@ class HomePage extends StatelessWidget {
                                   padding: EdgeInsets.fromLTRB(0, 5, 10, 0),
                                   child: Text(
                                     "Derby Leather Shoe",
-                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
                                     textAlign: TextAlign.start,
                                   ),
                                 ),
@@ -292,7 +294,8 @@ class HomePage extends StatelessWidget {
                                   padding: EdgeInsets.fromLTRB(0, 5, 10, 0),
                                   child: Text(
                                     "Derby Leather Shoe",
-                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
                                     textAlign: TextAlign.start,
                                   ),
                                 ),
