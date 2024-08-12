@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'home_page.dart';
 
 class Page4 extends StatelessWidget {
   const Page4({super.key});
@@ -7,11 +8,21 @@ class Page4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+        leading: Container(
+          height: 40,
+          width: 40,
+          decoration:
+              const BoxDecoration(shape: BoxShape.circle, color: Colors.blue),
+          child: IconButton(
+            icon: const Icon(Icons.arrow_back_ios_new_rounded),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: 
+                (context)=>const HomePage())
+              );
+            },
+          ),
         ),
         title: Container(
           margin: const EdgeInsets.symmetric(horizontal: 65.0),

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'page_1.dart';
-import 'page_2.dart';
-import 'page_3.dart';
+import 'home_page.dart';
+import 'Detail_page.dart';
+import 'add_product_page.dart';
 import 'page_4.dart';
+import 'shoe_size_scroll.dart';
 // import 'page_4.dart'; // Commented out the import statement for 'page_4.dart'
 
 class MyApp extends StatelessWidget {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Task-6',
       initialRoute: "/page_2",
       debugShowCheckedModeBanner: false,
-      routes: {"/page_2": (BuildContext context) => const Page2()},
+      routes: {"/page_2": (BuildContext context) => const HomePage()},
       theme: ThemeData.light(useMaterial3: true),
     );
   }

@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
+import 'home_page.dart';
 
-class Page3 extends StatelessWidget {
-  const Page3({Key? key}) : super(key: key);
+class AddProductPage extends StatelessWidget {
+  const AddProductPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        leading: const Icon(Icons.arrow_back_ios),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const HomePage()),
+            );
+          },
+          icon: const Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 17),
+            child:  Icon(
+              Icons.arrow_back_ios,
+              color: Colors.blue,
+            ),
+          ),
+        ),
         title: const Text("Add Product"),
       ),
       body: Column(

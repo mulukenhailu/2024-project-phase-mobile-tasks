@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'home_page.dart';
+import 'shoe_size_scroll.dart';
 
-class Page2 extends StatelessWidget {
-  const Page2({super.key});
+class DetailPage extends StatelessWidget {
+  const DetailPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,21 +26,29 @@ class Page2 extends StatelessWidget {
                           fit: BoxFit.cover,
                         ),
                       ),
-                        Positioned(
-                        top: 16,
-                        left: 16,
-                        child: SizedBox(
+                      Positioned(
+                        top: 12,
+                        left: 2,
+                        child: Container(
                           height: 40,
                           width: 40,
-                          child: Center(
-                            child: IconButton(
-                              icon:  const Icon(
-                                Icons.arrow_back_ios, color: Color.fromARGB(255, 20, 11, 195)
-                              ),
-                              style: ButtonStyle(
-                                backgroundColor: WidgetStateProperty.all<Color>(const Color.fromARGB(255, 255, 255, 255))
-                              ),
-                              onPressed: () {},
+                          padding: const EdgeInsets.symmetric(horizontal: 5),
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.blue,
+                          ),
+                          child: IconButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const HomePage(),
+                                ),
+                              );
+                            },
+                            icon: const Icon(
+                              Icons.arrow_back_ios,
+                              color: Color.fromARGB(255, 255, 255, 255),
                             ),
                           ),
                         ),
@@ -107,52 +116,64 @@ class Page2 extends StatelessWidget {
                             children: [Text("Size:")],
                           ),
                         ),
-                        const Row(
+                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.all(8),
-                                    child: FloatingActionButton(
-                                      backgroundColor:
-                                          Color.fromARGB(255, 255, 255, 255),
-                                      onPressed: null,
-                                      child: Text("41"),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.all(8),
-                                    child: FloatingActionButton(
-                                      backgroundColor:
-                                          Color.fromARGB(255, 255, 255, 255),
-                                      onPressed: null,
-                                      child: Text("41"),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.all(8),
-                                    child: FloatingActionButton(
-                                      backgroundColor: Colors.blueAccent,
-                                      onPressed: null,
-                                      child: Text("41"),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.all(8),
-                                    child: FloatingActionButton(
-                                      backgroundColor:
-                                          Color.fromARGB(255, 250, 251, 251),
-                                      onPressed: null,
-                                      child: Text("41"),
-                                    ),
-                                  ),
-                                ],
+                            Container(
+                              height: 100,
+                              width: 350,
+                              child: const ShoeSizeScroll(),
                               ),
-                            ),
+                          //  const Padding(
+                          //     padding: EdgeInsets.all(8.0),
+                          //     child: Row(
+                          //       mainAxisAlignment: MainAxisAlignment.start,
+                          //       children: [
+                          //         Padding(
+                          //           padding: EdgeInsets.all(8),
+                          //           child: FloatingActionButton(
+                          //             backgroundColor:
+                          //                 Color.fromARGB(255, 255, 255, 255),
+                          //             onPressed: null,
+                          //             child: Text(
+                          //               "41",
+                          //               style: TextStyle(
+                          //                 color: Colors.black
+                          //               ),
+                          //               ),
+                          //           ),
+                          //         ),
+                          //         Padding(
+                          //           padding: EdgeInsets.all(8),
+                          //           child: FloatingActionButton(
+                          //             backgroundColor:
+                          //                 Color.fromARGB(255, 255, 255, 255),
+                          //             onPressed: null,
+                          //             child: Text("41",
+                                      
+                          //             ),
+                          //           ),
+                          //         ),
+                          //         Padding(
+                          //           padding: EdgeInsets.all(8),
+                          //           child: FloatingActionButton(
+                          //             backgroundColor: Colors.blueAccent,
+                          //             onPressed: null,
+                          //             child: Text("41"),
+                          //           ),
+                          //         ),
+                          //         Padding(
+                          //           padding: EdgeInsets.all(8),
+                          //           child: FloatingActionButton(
+                          //             backgroundColor:
+                          //                 Color.fromARGB(255, 250, 251, 251),
+                          //             onPressed: null,
+                          //             child: Text("41"),
+                          //           ),
+                          //         ),
+                          //       ],
+                          //     ),
+                          //   ),
                           ],
                         ),
                         const Card(
