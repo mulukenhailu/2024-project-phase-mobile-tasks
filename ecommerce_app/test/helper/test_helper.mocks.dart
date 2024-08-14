@@ -9,16 +9,16 @@ import 'dart:typed_data' as _i14;
 
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:ecommerce_app/core/error/failure.dart' as _i6;
-import 'package:ecommerce_app/feature/domain/entities/product.dart' as _i7;
-import 'package:ecommerce_app/feature/domain/repositories/create_product_repository.dart'
+import 'package:ecommerce_app/feature/product/domain/entities/product.dart' as _i7;
+import 'package:ecommerce_app/feature/product/domain/repositories/create_product_repository.dart'
     as _i10;
-import 'package:ecommerce_app/feature/domain/repositories/delete_product_repository.dart'
+import 'package:ecommerce_app/feature/product/domain/repositories/delete_product_repository.dart'
     as _i11;
-import 'package:ecommerce_app/feature/domain/repositories/get_all_products_repository.dart'
+import 'package:ecommerce_app/feature/product/domain/repositories/get_all_products_repository.dart'
     as _i8;
-import 'package:ecommerce_app/feature/domain/repositories/get_product_repository.dart'
+import 'package:ecommerce_app/feature/product/domain/repositories/get_product_repository.dart'
     as _i4;
-import 'package:ecommerce_app/feature/domain/repositories/update_product_repository.dart'
+import 'package:ecommerce_app/feature/product/domain/repositories/update_product_repository.dart'
     as _i9;
 import 'package:http/http.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;

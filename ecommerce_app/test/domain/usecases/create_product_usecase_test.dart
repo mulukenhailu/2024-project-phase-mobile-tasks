@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:ecommerce_app/feature/domain/entities/product.dart';
-import 'package:ecommerce_app/feature/domain/usecases/create_product_usecase.dart';
+import 'package:ecommerce_app/feature/product/domain/entities/product.dart';
+import 'package:ecommerce_app/feature/product/domain/usecases/create_product_usecase.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 

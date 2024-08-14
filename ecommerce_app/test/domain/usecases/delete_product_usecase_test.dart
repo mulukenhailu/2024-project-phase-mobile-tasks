@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:ecommerce_app/feature/domain/usecases/delete_product_usecase.dart';
+import 'package:ecommerce_app/feature/product/domain/usecases/delete_product_usecase.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 
