@@ -9,7 +9,8 @@ import 'dart:typed_data' as _i14;
 
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:ecommerce_app/core/error/failure.dart' as _i6;
-import 'package:ecommerce_app/feature/product/domain/entities/product.dart' as _i7;
+import 'package:ecommerce_app/feature/product/domain/entities/product.dart'
+    as _i7;
 import 'package:ecommerce_app/feature/product/domain/repositories/create_product_repository.dart'
     as _i10;
 import 'package:ecommerce_app/feature/product/domain/repositories/delete_product_repository.dart'
@@ -78,7 +79,8 @@ class MockGetProductRepository extends _i1.Mock
   }
 
   @override
-  _i5.Future<_i2.Either<_i6.Failure, _i7.ProductEntity>> getProduct(int? id) =>
+  _i5.Future<_i2.Either<_i6.Failure, _i7.ProductEntity>> getProduct(
+          String? id) =>
       (super.noSuchMethod(
         Invocation.method(
           #getProduct,
@@ -135,7 +137,7 @@ class MockUpdateProductRepository extends _i1.Mock
 
   @override
   _i5.Future<_i2.Either<_i6.Failure, _i7.ProductEntity>> updateProduct(
-          int? id) =>
+          String? id) =>
       (super.noSuchMethod(
         Invocation.method(
           #updateProduct,
@@ -192,7 +194,7 @@ class MockDeleteProductRepository extends _i1.Mock
   }
 
   @override
-  _i5.Future<_i2.Either<_i6.Failure, void>> deleteProduct(int? id) =>
+  _i5.Future<_i2.Either<_i6.Failure, void>> deleteProduct(String? id) =>
       (super.noSuchMethod(
         Invocation.method(
           #deleteProduct,

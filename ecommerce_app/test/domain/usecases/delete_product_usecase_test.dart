@@ -14,7 +14,7 @@ void main() {
     deleteProductUsecase = DeleteProductUsecase(mockDeleteProductRepository);
   });
 
-  const testId = 1;
+  const testId = '1';
 
 
   test('should delete the product from the respoitory', () async {

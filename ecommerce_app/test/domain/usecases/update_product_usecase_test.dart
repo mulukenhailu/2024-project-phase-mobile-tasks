@@ -15,9 +15,9 @@ void main() {
     updateProductUsecase = UpdateProductUsecase(mockUpdateProductRepository);
   });
 
-  const testId = 1;
+  const testId = '1';
   const testProductDetail = ProductEntity(
-      id: 1,
+      id: '1',
       name: 'Toyota',
       description: 'Durable',
       imageUrl: 'path/to/image',

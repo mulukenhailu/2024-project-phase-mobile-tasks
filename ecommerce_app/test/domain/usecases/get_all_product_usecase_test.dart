@@ -17,13 +17,13 @@ void main() {
 
   const List<ProductEntity> testProductDetails = [
     ProductEntity(
-        id: 1,
+        id: '1',
         name: 'Bmw',
         description: 'cool car',
         imageUrl: 'some/path',
         price: 2000.00),
     ProductEntity(
-        id: 2,
+        id: '1',
         name: 'Bmw2',
         description: 'cool car2',
         imageUrl: 'some/path2',

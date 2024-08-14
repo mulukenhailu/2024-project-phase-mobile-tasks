@@ -15,9 +15,9 @@ void main() {
     getProductUsecase = GetProductUsecase(mockGetProductRepository);
   });
 
-  const testId = 1;
+  const testId = '1';
   const testProductDetail = ProductEntity(
-    id: 1,
+    id: '1',
     name: 'Bmw',
     description: 'cool car',
     imageUrl: 'some/path',

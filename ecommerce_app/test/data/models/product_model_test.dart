@@ -8,7 +8,7 @@ import '../../fixtures/fixture_reader.dart';
 
 void main() {
   const testProductModel = ProductModel(
-      id: 1,
+      id: '1',
       name: 'Nike',
       description: 'land airPlane',
       imageUrl: 'path/to/image',
@@ -48,7 +48,7 @@ void main() {
       //act
       final result = testProductModel.toJson();
       final expectedResult = {
-        'id': 1,
+        'id': '1',
         'name': 'Nike',
         'description': 'land airPlane',
         'imageUrl': 'path/to/image',

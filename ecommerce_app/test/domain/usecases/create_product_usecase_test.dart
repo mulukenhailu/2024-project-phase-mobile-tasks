@@ -16,7 +16,7 @@ void main() {
   });
 
   const testProduct = ProductEntity(
-      id: 1,
+      id: '1',
       name: 'suzuki',
       description: 'norma',
       imageUrl: 'path/to/suzuki',
