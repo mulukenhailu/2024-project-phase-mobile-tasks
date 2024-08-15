@@ -20,3 +20,8 @@ class ConnectionFailure extends Failure {
 class DataBaseFailure extends Failure {
   const DataBaseFailure({required super.message});
 }
+
+class CacheFailure extends Failure {
+  const CacheFailure({required super.message});
+}
+

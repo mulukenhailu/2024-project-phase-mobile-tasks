@@ -1,14 +1,15 @@
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/error/failure.dart';
+import '../../data/models/product_model.dart';
 import '../entities/product.dart';
 import '../repositories/create_product_repository.dart';
 
 class CreateProductUsecase {
-  CreateProductRepository createProductRepository;
+  CreateProductRepository  createProductRepository;
   CreateProductUsecase(this.createProductRepository);
 
-  Future<Either<Failure, ProductEntity>> call(ProductEntity product) async {
+  Future<Either<Failure, ProductEntity>> call(ProductModel product) async {
     return await createProductRepository.createProduct(product);
   }
 }
