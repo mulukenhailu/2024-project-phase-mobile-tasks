@@ -13,6 +13,11 @@ class ServerFailure extends Failure {
   const ServerFailure({required super.message});
 }
 
+
+class SocketFailure extends Failure {
+  const SocketFailure({required super.message});
+}
+
 class ConnectionFailure extends Failure {
   const ConnectionFailure({required super.message});
 }
