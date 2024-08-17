@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:ecommerce_app/core/error/exception.dart';
 import 'package:ecommerce_app/core/error/failure.dart';
 import 'package:ecommerce_app/feature/product/data/repositories/delete_product_repository_impl.dart';
-import 'package:ecommerce_app/feature/product/domain/repositories/delete_product_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 

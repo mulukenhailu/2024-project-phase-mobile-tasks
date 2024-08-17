@@ -3,7 +3,6 @@ import 'package:ecommerce_app/core/error/exception.dart';
 import 'package:ecommerce_app/core/error/failure.dart';
 import 'package:ecommerce_app/feature/product/data/models/product_model.dart';
 import 'package:ecommerce_app/feature/product/data/repositories/get_all_products_repository_impl.dart';
-import 'package:ecommerce_app/feature/product/domain/entities/product.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 

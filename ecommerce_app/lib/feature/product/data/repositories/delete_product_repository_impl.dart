@@ -1,8 +1,8 @@
-import '../../../../core/error/exception.dart';
-import '../../../../core/error/failure.dart';
 import 'package:dartz/dartz.dart';
 
-import '../../../../core/platform/network_info.dart';
+import '../../../../core/error/exception.dart';
+import '../../../../core/error/failure.dart';
+import '../../../../core/network/network_info.dart';
 import '../../domain/repositories/delete_product_repository.dart';
 import '../datasource/product_remote_data_source.dart';
 
