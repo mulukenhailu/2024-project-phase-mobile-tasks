@@ -12,7 +12,8 @@ import 'package:internet_connection_checker/internet_connection_checker.dart' as
 import 'package:mockito/annotations.dart';
 
 
-@GenerateMocks(
+
+import 'package:shared_preferences/shared_preferences.dart';@GenerateMocks(
   [
     GetProductRepository,
     GetAllProductRepository,
@@ -22,7 +23,8 @@ import 'package:mockito/annotations.dart';
     ProductRemoteDatasource,
     ProductLocalDataSource,
     NetworkInfo,
-    prefix.InternetConnectionChecker
+    prefix.InternetConnectionChecker,
+    SharedPreferences
     
   ],
   customMocks: [MockSpec<http.Client>(as :#MockHTextInputClient)]
