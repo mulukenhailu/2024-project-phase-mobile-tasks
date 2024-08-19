@@ -33,7 +33,7 @@ import 'package:internet_connection_checker/internet_connection_checker.dart'
     as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i19;
-import 'package:shared_preferences/src/shared_preferences_legacy.dart' as _i17;
+import 'package:shared_preferences/shared_preferences.dart' as _i17;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -657,8 +657,8 @@ class MockSharedPreferences extends _i1.Mock implements _i17.SharedPreferences {
 /// A class which mocks [Client].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockHTextInputClient extends _i1.Mock implements _i5.Client {
-  MockHTextInputClient() {
+class MockHttpClient extends _i1.Mock implements _i5.Client {
+  MockHttpClient() {
     _i1.throwOnMissingStub(this);
   }
 

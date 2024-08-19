@@ -13,7 +13,9 @@ import 'package:mockito/annotations.dart';
 
 
 
-import 'package:shared_preferences/shared_preferences.dart';@GenerateMocks(
+import 'package:shared_preferences/shared_preferences.dart';
+
+@GenerateMocks(
   [
     GetProductRepository,
     GetAllProductRepository,
@@ -24,10 +26,11 @@ import 'package:shared_preferences/shared_preferences.dart';@GenerateMocks(
     ProductLocalDataSource,
     NetworkInfo,
     prefix.InternetConnectionChecker,
-    SharedPreferences
+    SharedPreferences,
+    // http.Client 
     
   ],
-  customMocks: [MockSpec<http.Client>(as :#MockHTextInputClient)]
+  customMocks: [MockSpec<http.Client>(as :#MockHttpClient)]
 )
 
 void main(){}
