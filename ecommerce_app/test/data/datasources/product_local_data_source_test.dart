@@ -30,7 +30,7 @@ void main() {
       //act
       final result = await productLocalDataSourceImpl.getAllCachedProduct();
       //assert
-      verify(mockSharedPreferences.getString('CACHED_PRODUCT'));
+      verify(mockSharedPreferences.getString(key));
       expect(result, equals(testProductModel));
     });
 
@@ -58,7 +58,7 @@ void main() {
       //assert
       final expectedJsonString = json.encode(testProductModel.toJson());
       verify(mockSharedPreferences.setString(
-          'CACHED_PRODUCT', expectedJsonString));
+          key, expectedJsonString));
     });
   });
 }
