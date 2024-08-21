@@ -178,11 +178,11 @@ class MockUpdateProductRepository extends _i1.Mock
 
   @override
   _i7.Future<_i2.Either<_i8.Failure, _i9.ProductEntity>> updateProduct(
-          String? id) =>
+          _i3.ProductModel? product) =>
       (super.noSuchMethod(
         Invocation.method(
           #updateProduct,
-          [id],
+          [product],
         ),
         returnValue:
             _i7.Future<_i2.Either<_i8.Failure, _i9.ProductEntity>>.value(
@@ -190,7 +190,7 @@ class MockUpdateProductRepository extends _i1.Mock
           this,
           Invocation.method(
             #updateProduct,
-            [id],
+            [product],
           ),
         )),
       ) as _i7.Future<_i2.Either<_i8.Failure, _i9.ProductEntity>>);
@@ -313,16 +313,17 @@ class MockProductRemoteDatasource extends _i1.Mock
       ) as _i7.Future<_i3.ProductModel>);
 
   @override
-  _i7.Future<_i3.ProductModel> updateProduct(String? id) => (super.noSuchMethod(
+  _i7.Future<_i3.ProductModel> updateProduct(_i3.ProductModel? product) =>
+      (super.noSuchMethod(
         Invocation.method(
           #updateProduct,
-          [id],
+          [product],
         ),
         returnValue: _i7.Future<_i3.ProductModel>.value(_FakeProductModel_1(
           this,
           Invocation.method(
             #updateProduct,
-            [id],
+            [product],
           ),
         )),
       ) as _i7.Future<_i3.ProductModel>);

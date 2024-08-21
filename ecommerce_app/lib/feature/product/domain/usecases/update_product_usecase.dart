@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/error/failure.dart';
+import '../../data/models/product_model.dart';
 import '../entities/product.dart';
 import '../repositories/update_product_repository.dart';
 
@@ -18,7 +19,7 @@ class UpdateProductUsecase {
   UpdateProductRepository updateProductRepository;
   UpdateProductUsecase(this.updateProductRepository);
 
-  Future<Either<Failure, ProductEntity>> call(String id) async {
-    return await updateProductRepository.updateProduct(id);
+  Future<Either<Failure, ProductEntity>> call(ProductModel product) async {
+    return await updateProductRepository.updateProduct(product);
   }
 }

@@ -6,6 +6,7 @@ import '../../../../core/network/network_info.dart';
 import '../../domain/entities/product.dart';
 import '../../domain/repositories/update_product_repository.dart';
 import '../datasource/product_remote_data_source.dart';
+import '../models/product_model.dart';
 
 class UpdateProductRepositoryImpl implements UpdateProductRepository {
   UpdateProductRepositoryImpl(
@@ -15,10 +16,10 @@ class UpdateProductRepositoryImpl implements UpdateProductRepository {
   final NetworkInfo networkInfo;
 
   @override
-  Future<Either<Failure, ProductEntity>> updateProduct(String id) async {
+  Future<Either<Failure, ProductEntity>> updateProduct(ProductModel product) async {
     if (await networkInfo.isConnected) {
       try {
-        final testProductModel = await remoteDatasource.updateProduct(id);
+        final testProductModel = await remoteDatasource.updateProduct(product);
         return Right(testProductModel.toEntity());
       } on ServerException {
         return const Left(ServerFailure(message: 'Server Failure'));

@@ -127,11 +127,11 @@ void main() {
           .thenAnswer(
               (_) async => http.Response(fixture('update_product.json'), 200));
       //act
-      productRemoteDataSourceImpl.updateProduct(testId);
+      productRemoteDataSourceImpl.updateProduct(testUpdateProductModel);
       //assert
       verify(mockHttpClient.put(
           Uri.parse(
-              'https://g5-flutter-learning-path-be.onrender.com/api/v1/products/$testId'),
+              'https://g5-flutter-learning-path-be.onrender.com/api/v1/products/$testUpdateProductModel.id'),
           headers: {'Content-Type': 'application/json'},
           body: {'name': 'TV', 'description': '36\' TV', 'price': 123.4}));
     });
@@ -144,7 +144,7 @@ void main() {
           .thenAnswer(
               (_) async => http.Response(fixture('update_product.json'), 200));
       //act
-      final result = await productRemoteDataSourceImpl.updateProduct(testId);
+      final result = await productRemoteDataSourceImpl.updateProduct(testUpdateProductModel);
       //assert
       expect(result, equals(testUpdateProductModel));
     });
@@ -157,11 +157,13 @@ void main() {
           .thenAnswer((_) async => http.Response('something went wrong', 404));
       //act
       Future<ProductModel> call() =>
-          productRemoteDataSourceImpl.updateProduct(testId);
+          productRemoteDataSourceImpl.updateProduct(testUpdateProductModel);
       //assert
       expect(call(), throwsA(isA<ServerException>()));
     });
   });
+
+
 
   //get all products
   const testProductModelList = [

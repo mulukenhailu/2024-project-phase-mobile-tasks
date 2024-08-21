@@ -42,10 +42,10 @@ void main() {
     test('should check if the deivce is online', () async {
       //arrange
       when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
-      when(mockProductRemoteDatasource.updateProduct(testId))
+      when(mockProductRemoteDatasource.updateProduct(testProductModel))
           .thenAnswer((_) async => testProductModel);
       //act
-      updateProductRepositoryImpl.updateProduct(testId);
+      updateProductRepositoryImpl.updateProduct(testProductModel);
       // assert
       verify(mockNetworkInfo.isConnected);
     });
@@ -59,13 +59,13 @@ void main() {
         'should update the product when the call to the remote data source is successful',
         () async {
       //arrange
-      when(mockProductRemoteDatasource.updateProduct(testId))
+      when(mockProductRemoteDatasource.updateProduct(testProductModel))
           .thenAnswer((_) async => testProductModel);
       //act
-      final result = await updateProductRepositoryImpl.updateProduct(testId);
+      final result = await updateProductRepositoryImpl.updateProduct(testProductModel);
       //assert
       verify(mockNetworkInfo.isConnected);
-      verify(mockProductRemoteDatasource.updateProduct(testId));
+      verify(mockProductRemoteDatasource.updateProduct(testProductModel));
       expect(result, equals(const Right(productEntity)));
     });
 
@@ -73,12 +73,12 @@ void main() {
         'should return ServerException when the call to the remote data source is unsuccessful',
         () async {
       //arrange
-      when(mockProductRemoteDatasource.updateProduct(testId))
+      when(mockProductRemoteDatasource.updateProduct(testProductModel))
           .thenThrow(ServerException());
       //act
-      final result = await updateProductRepositoryImpl.updateProduct(testId);
+      final result = await updateProductRepositoryImpl.updateProduct(testProductModel);
       //assert
-      verify(mockProductRemoteDatasource.updateProduct(testId));
+      verify(mockProductRemoteDatasource.updateProduct(testProductModel));
       expect(result, const Left(ServerFailure(message: 'Server Failure')));
     });
   });
@@ -91,10 +91,10 @@ void main() {
         'should return SocketException when the device failed to connect to the internet',
         () async {
       //arrange
-      when(mockProductRemoteDatasource.updateProduct(testId))
+      when(mockProductRemoteDatasource.updateProduct(testProductModel))
           .thenThrow(SocketException());
       //act
-      final result = await updateProductRepositoryImpl.updateProduct(testId);
+      final result = await updateProductRepositoryImpl.updateProduct(testProductModel);
       //assert
       verifyZeroInteractions(mockProductRemoteDatasource);
       expect(result, const Left(SocketFailure(message: 'Socket Failure')));
