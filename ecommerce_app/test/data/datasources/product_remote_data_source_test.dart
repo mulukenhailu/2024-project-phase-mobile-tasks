@@ -213,6 +213,9 @@ void main() {
     });
   });
 
+
+  //create a product
+
   const testCreateProductModel = ProductModel(
     id: '66bde8af9bbe07fc39034d13',
     name: 'PC',

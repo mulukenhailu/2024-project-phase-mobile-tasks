@@ -5,5 +5,5 @@ import '../../data/models/product_model.dart';
 import '../entities/product.dart';
 
 abstract class CreateProductRepository {
-  Future<Either<Failure, ProductEntity>> createProduct(ProductModel product);
+  Future<Either<Failure, ProductEntity>> createProduct(ProductEntity product);
 }

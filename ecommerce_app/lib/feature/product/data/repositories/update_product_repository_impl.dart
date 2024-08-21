@@ -16,10 +16,11 @@ class UpdateProductRepositoryImpl implements UpdateProductRepository {
   final NetworkInfo networkInfo;
 
   @override
-  Future<Either<Failure, ProductEntity>> updateProduct(ProductModel product) async {
+  Future<Either<Failure, ProductEntity>> updateProduct(ProductEntity product) async {
     if (await networkInfo.isConnected) {
       try {
-        final testProductModel = await remoteDatasource.updateProduct(product);
+        final productModel = product.toModel();
+        final testProductModel = await remoteDatasource.updateProduct(productModel);
         return Right(testProductModel.toEntity());
       } on ServerException {
         return const Left(ServerFailure(message: 'Server Failure'));

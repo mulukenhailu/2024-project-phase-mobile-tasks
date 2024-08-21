@@ -20,11 +20,13 @@ class CreateProductRepositoryImpl implements CreateProductRepository {
 
   @override
   Future<Either<Failure, ProductEntity>> createProduct(
-      ProductModel productModel) async {
+      ProductEntity productEntity) async {
     if (await networkInfo.isConnected) {
       try {
-        final remoteProduct =
-            await remoteDatasource.createProduct(productModel);
+        //get the entity and convert it model , pass it to the remote data souce and 
+        //convert it back to entity and return it
+        final productModel = productEntity.toModel();
+        final remoteProduct = await remoteDatasource.createProduct(productModel);
         localDataSource.cacheProduct(productModel);
         return Right(remoteProduct.toEntity());
       } on ServerException {

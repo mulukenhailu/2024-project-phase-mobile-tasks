@@ -16,8 +16,7 @@ void main() {
     updateProductUsecase = UpdateProductUsecase(mockUpdateProductRepository);
   });
 
-  const testId = '1';
-  const testProductDetail = ProductEntity(
+  const testProductEntity = ProductEntity(
       id: '1',
       name: 'Toyota',
       description: 'Durable',
@@ -32,13 +31,13 @@ void main() {
       price: 1500.00);
   test('should update the product from the respository', () async {
     //arrange
-    when(mockUpdateProductRepository.updateProduct(testProductModel))
-        .thenAnswer((_) async => const Right(testProductDetail));
+    when(mockUpdateProductRepository.updateProduct(testProductEntity))
+        .thenAnswer((_) async => const Right(testProductEntity));
 
     // act
-    final result = await updateProductUsecase(testProductModel);
+    final result = await updateProductUsecase(testProductEntity);
 
     // assert
-    expect(result, const Right(testProductDetail));
+    expect(result, const Right(testProductEntity));
   });
 }

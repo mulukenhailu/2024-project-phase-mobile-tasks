@@ -16,7 +16,7 @@ void main() {
     createProductUsecase = CreateProductUsecase(mockCreateProductRepository);
   });
 
-  const testProduct = ProductEntity(
+  const testProductEntity = ProductEntity(
       id: '1',
       name: 'suzuki',
       description: 'norma',
@@ -34,12 +34,12 @@ void main() {
   test('should create product from the respository', () async {
 
     //arrange
-    when(mockCreateProductRepository.createProduct(testProductModel))
-        .thenAnswer((_) async => const Right(testProduct));
+    when(mockCreateProductRepository.createProduct(testProductEntity))
+        .thenAnswer((_) async => const Right(testProductEntity));
 
     //act
-    final result = await createProductUsecase(testProductModel);
+    final result = await createProductUsecase(testProductEntity);
     // assert
-    expect(result, right(testProduct));
+    expect(result, right(testProductEntity));
   });
 }

@@ -5,5 +5,5 @@ import '../../data/models/product_model.dart';
 import '../entities/product.dart';
 
 abstract class UpdateProductRepository {
-  Future<Either<Failure, ProductEntity>> updateProduct(ProductModel product);
+  Future<Either<Failure, ProductEntity>> updateProduct(ProductEntity product);
 }

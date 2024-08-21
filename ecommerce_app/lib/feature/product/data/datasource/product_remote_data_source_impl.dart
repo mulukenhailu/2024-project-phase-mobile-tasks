@@ -12,14 +12,6 @@ class ProductRemoteDataSourceImpl implements ProductRemoteDatasource {
 
   @override
   Future<ProductModel> createProduct(ProductModel product) async {
-    const testCreateProductModel = ProductModel(
-      id: '66bde8af9bbe07fc39034d13',
-      name: 'PC',
-      description: 'long description',
-      price: 123,
-      imageUrl:
-          'https://res.cloudinary.com/g5-mobile-track/image/upload/v1723721903/images/ldbvucbl012gy90gsuam.png',
-    );
     final response = await httpClient.post(
         Uri.parse(
             'https://g5-flutter-learning-path-be.onrender.com/api/v2/products'),

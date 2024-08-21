@@ -32,7 +32,7 @@ void main() {
       imageUrl: 'path/to/suzuki',
       price: 1000.00);
 
-  const productEntity = ProductEntity(
+  const testProductEntity = ProductEntity(
       id: '1',
       name: 'suzuki',
       description: 'norma',
@@ -80,10 +80,10 @@ void main() {
           .thenAnswer((_) async => testProductModel);
       // act
       final result =
-          await createProductRepositoryImpl.createProduct(testProductModel);
+          await createProductRepositoryImpl.createProduct(testProductEntity);
       // assert
       verify(mockProductRemoteDatasource.createProduct(testProductModel));
-      expect(result, equals(const Right(productEntity)));
+      expect(result, equals(const Right(testProductEntity)));
     });
 
     test(
@@ -93,7 +93,7 @@ void main() {
       when(mockProductRemoteDatasource.createProduct(testProductModel))
           .thenAnswer((_) async => testProductModel);
       // act
-      await createProductRepositoryImpl.createProduct(testProductModel);
+      await createProductRepositoryImpl.createProduct(testProductEntity);
       // assert
       verify(mockProductRemoteDatasource.createProduct(testProductModel));
       verify(mockProductLocalDataSource.cacheProduct(testProductModel));
@@ -107,7 +107,7 @@ void main() {
           .thenThrow(ServerException());
       // act
       final result =
-          await createProductRepositoryImpl.createProduct(testProductModel);
+          await createProductRepositoryImpl.createProduct(testProductEntity);
       // assert
       verify(mockProductRemoteDatasource.createProduct(testProductModel));
       verifyZeroInteractions(mockProductLocalDataSource);
@@ -124,12 +124,12 @@ void main() {
           .thenAnswer((_) async => testProductModel);
 
       //act
-      final result =  await createProductRepositoryImpl.createProduct(testProductModel);
+      final result =  await createProductRepositoryImpl.createProduct(testProductEntity);
 
       //assert
       verify(mockProductLocalDataSource.getAllCachedProduct());
       verifyZeroInteractions(mockProductRemoteDatasource);
-      expect(result, equals(const Right(productEntity)));
+      expect(result, equals(const Right(testProductEntity)));
     });
 
     test('should return cache failure when the there is no cached product',
@@ -140,7 +140,7 @@ void main() {
 
       //act
       final result =
-          await createProductRepositoryImpl.createProduct(testProductModel);
+          await createProductRepositoryImpl.createProduct(testProductEntity);
 
       //assert
       verify(mockProductLocalDataSource.getAllCachedProduct());

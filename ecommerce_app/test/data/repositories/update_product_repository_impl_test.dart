@@ -22,9 +22,8 @@ void main() {
         networkInfo: mockNetworkInfo);
   });
 
-  const testId = '1';
 
-  const productEntity = ProductEntity(
+  const testProductEntity = ProductEntity(
       id: '1',
       name: 'suzuki',
       description: 'norma',
@@ -45,7 +44,7 @@ void main() {
       when(mockProductRemoteDatasource.updateProduct(testProductModel))
           .thenAnswer((_) async => testProductModel);
       //act
-      updateProductRepositoryImpl.updateProduct(testProductModel);
+      updateProductRepositoryImpl.updateProduct(testProductEntity);
       // assert
       verify(mockNetworkInfo.isConnected);
     });
@@ -62,11 +61,11 @@ void main() {
       when(mockProductRemoteDatasource.updateProduct(testProductModel))
           .thenAnswer((_) async => testProductModel);
       //act
-      final result = await updateProductRepositoryImpl.updateProduct(testProductModel);
+      final result = await updateProductRepositoryImpl.updateProduct(testProductEntity);
       //assert
       verify(mockNetworkInfo.isConnected);
       verify(mockProductRemoteDatasource.updateProduct(testProductModel));
-      expect(result, equals(const Right(productEntity)));
+      expect(result, equals(const Right(testProductEntity)));
     });
 
     test(
@@ -76,7 +75,7 @@ void main() {
       when(mockProductRemoteDatasource.updateProduct(testProductModel))
           .thenThrow(ServerException());
       //act
-      final result = await updateProductRepositoryImpl.updateProduct(testProductModel);
+      final result = await updateProductRepositoryImpl.updateProduct(testProductEntity);
       //assert
       verify(mockProductRemoteDatasource.updateProduct(testProductModel));
       expect(result, const Left(ServerFailure(message: 'Server Failure')));
@@ -94,7 +93,7 @@ void main() {
       when(mockProductRemoteDatasource.updateProduct(testProductModel))
           .thenThrow(SocketException());
       //act
-      final result = await updateProductRepositoryImpl.updateProduct(testProductModel);
+      final result = await updateProductRepositoryImpl.updateProduct(testProductEntity);
       //assert
       verifyZeroInteractions(mockProductRemoteDatasource);
       expect(result, const Left(SocketFailure(message: 'Socket Failure')));

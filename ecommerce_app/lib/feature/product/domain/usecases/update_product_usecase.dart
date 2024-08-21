@@ -19,7 +19,7 @@ class UpdateProductUsecase {
   UpdateProductRepository updateProductRepository;
   UpdateProductUsecase(this.updateProductRepository);
 
-  Future<Either<Failure, ProductEntity>> call(ProductModel product) async {
+  Future<Either<Failure, ProductEntity>> call(ProductEntity product) async {
     return await updateProductRepository.updateProduct(product);
   }
 }
