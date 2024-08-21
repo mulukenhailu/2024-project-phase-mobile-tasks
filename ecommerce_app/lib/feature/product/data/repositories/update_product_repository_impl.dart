@@ -6,7 +6,6 @@ import '../../../../core/network/network_info.dart';
 import '../../domain/entities/product.dart';
 import '../../domain/repositories/update_product_repository.dart';
 import '../datasource/product_remote_data_source.dart';
-import '../models/product_model.dart';
 
 class UpdateProductRepositoryImpl implements UpdateProductRepository {
   UpdateProductRepositoryImpl(
