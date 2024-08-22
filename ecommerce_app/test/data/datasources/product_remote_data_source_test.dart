@@ -220,7 +220,7 @@ void main() {
     id: '66bde8af9bbe07fc39034d13',
     name: 'PC',
     description: 'long description',
-    price: 123,
+    price: 123.4,
     imageUrl:
         'https://res.cloudinary.com/g5-mobile-track/image/upload/v1723721903/images/ldbvucbl012gy90gsuam.png',
   );

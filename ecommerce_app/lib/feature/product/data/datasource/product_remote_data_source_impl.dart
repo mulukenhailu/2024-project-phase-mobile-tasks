@@ -19,12 +19,11 @@ class ProductRemoteDataSourceImpl implements ProductRemoteDatasource {
           'Content-Type': 'application/json'
         },
         body: {
-          'id': '66bde8af9bbe07fc39034d13',
-          'name': 'PC',
-          'description': 'long description',
-          'imageUrl':
-              'https://res.cloudinary.com/g5-mobile-track/image/upload/v1723721903/images/ldbvucbl012gy90gsuam.png',
-          'price': 123.4
+      'id': product.id,
+      'name': product.name,
+      'description': product.description,
+      'price': product.price,
+      'imageUrl':product.imageUrl
         });
 
     if (response.statusCode == 200) {

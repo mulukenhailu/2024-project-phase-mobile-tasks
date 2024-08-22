@@ -18,7 +18,7 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
   UpdateProductUsecase updateProductUsecase;
   DeleteProductUsecase deleteProductUsecase;
   GetAllProductUsecase getAllProductUsecase;
-  GetProductUsecase getProductUsecase;
+  GetProductUsecase    getProductUsecase;
   //Usecases
 
   ProductBloc(
